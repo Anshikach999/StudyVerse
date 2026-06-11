@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Music Player</title>
+
+<style>
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(to right,#141e30,#243b55);
+font-family:Arial;
+}
+
+.player{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+width:300px;
+}
+
+img{
+width:200px;
+height:200px;
+border-radius:20px;
+object-fit:cover;
+margin-bottom:20px;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+button{
+padding:12px 20px;
+margin:10px;
+font-size:18px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#243b55;
+color:white;
+}
+
+button:hover{
+opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="player">
+
+<img src="https://picsum.photos/300">
+
+<h2>My Favorite Song 🎵</h2>
+
+<audio id="song">
+
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+
+</audio>
+
+<button onclick="playSong()">
+▶ Play
+</button>
+
+<button onclick="pauseSong()">
+⏸ Pause
+</button>
+
+</div>
+
+<script>
+
+let song = document.getElementById("song");
+
+function playSong(){
+song.play();
+}
+
+function pauseSong(){
+song.pause();
+}
+
+</script>
+
+</body>
+</html>

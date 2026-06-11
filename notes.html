@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Notes</title>
+</head>
+
+<body>
+
+<h1>Add Note 📚</h1>
+
+<input type="text" id="subject" placeholder="Subject"><br><br>
+
+<input type="text" id="title" placeholder="Title"><br><br>
+
+<textarea id="content" placeholder="Content"></textarea><br><br>
+
+<button onclick="addNote()">Add Note</button>
+
+<p id="result"></p>
+
+<script>
+
+async function addNote(){
+
+const subject =
+document.getElementById("subject").value;
+
+const title =
+document.getElementById("title").value;
+
+const content =
+document.getElementById("content").value;
+
+const response = await fetch(
+"http://localhost:3000/notes",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+subject,
+title,
+content
+})
+}
+);
+
+const data = await response.json();
+
+document.getElementById("result").innerText =
+data.message;
+
+}
+
+</script>
+
+</body>
+</html>
