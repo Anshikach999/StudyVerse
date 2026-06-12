@@ -38,8 +38,9 @@ const User = mongoose.model("User", UserSchema);
 const Note = mongoose.model("Note", NoteSchema);
 
 // Home
+
 app.get("/", (req, res) => {
-  res.send("Home Route Working ✅");
+  res.sendFile(__dirname + "/index.html");
 });
 
 // Subjects
