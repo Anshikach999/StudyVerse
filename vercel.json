@@ -1,13 +1,9 @@
 {
   "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|html))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
